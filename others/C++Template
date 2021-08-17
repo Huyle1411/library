@@ -1,0 +1,8 @@
+#include "bits/stdc++.h"
+using namespace std;
+#define i64 long long
+class $CLASSNAME$ {
+public:
+	$RETURNTYPE$ $METHODNAME$($METHODPARAMS$) {
+	}
+};

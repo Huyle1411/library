@@ -1,0 +1,11 @@
+﻿---
+BasedOnStyle: Google
+AllowShortBlocksOnASingleLine: 'true'
+AllowShortFunctionsOnASingleLine: All
+AllowShortLambdasOnASingleLine: All
+ColumnLimit: '0'
+IndentWidth: '4'
+Language: Cpp
+UseTab: Never
+
+...

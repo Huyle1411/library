@@ -7,12 +7,13 @@ class dsu {
         sz = vector<int>(n, 1);
         iota(p.begin(), p.end(), 0);
     }
-    int union_find(int x) {
-        return (x == p[x] ? x : (p[x] = union_find(p[x])));
+    int leader(int x) {
+        return (x == p[x] ? x : (p[x] = leader(p[x])));
     }
-    bool union_set(int x, int y) {
-        x = union_find(x);
-        y = union_find(y);
+    bool same(int x, int y) { return (leader(x) == leader(y)); }
+    bool join(int x, int y) {
+        x = leader(x);
+        y = leader(y);
         if (x != y) {
             if (sz[x] > sz[y])
                 swap(x, y);

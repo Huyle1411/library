@@ -126,20 +126,7 @@ string gen_time()
 }
 void generate_test()
 {
-	int n = rand(2, 50);
-	vector<string> a(n);
-	cout << n << '\n';
-	for (auto& s : a) {
-		s = gen_time();
-		cout << s << ' ';
-	}
-	cout << endl;
-	vector<int> d(n);
-	for (auto& num : d) {
-		num = rand(-1e9, 1e9);
-		cout << num << ' ';
-	}
-	cout << endl;
+	// write your test case here
 }
 
 signed main()

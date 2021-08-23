@@ -31,7 +31,7 @@ do
     # Generate test_case and save it in input1.txt
     ./generator > input1.txt
 
-	cat input1.txt
+	#cat input1.txt
     # run original solution, take input from above generated test case i.e. from input1.txt
     # and save it in original_output.txt
     ./original < input1.txt > original_output.txt #|| {echo failed; exit 1;}

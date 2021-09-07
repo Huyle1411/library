@@ -20,7 +20,7 @@ std::string to_string(A v) {
 void debug_out() { std::cerr << std::endl; }
 template <typename Head, typename... Tail>
 void debug_out(Head H, Tail... T) {
-  std::cerr << " " << to_string(H);
+  std::cerr << " " << std::to_string(H);
   debug_out(T...);
 }
 #ifdef _DEBUG

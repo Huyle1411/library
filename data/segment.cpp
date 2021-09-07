@@ -2,7 +2,6 @@ class segtree {
  public:
   struct node {
     // set default value (used for leaves)
-    // not necessarily neutral element!
     ... a = ...;
     void apply(int l, int r, ... v) {
       ...

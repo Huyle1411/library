@@ -1,3 +1,4 @@
+namespace std {
 std::string to_string(std::string s) { return '"' + s + '"'; }
 std::string to_string(const char *s) { return to_string((std::string)s); }
 std::string to_string(bool b) { return (b ? "true" : "false"); }
@@ -17,6 +18,7 @@ std::string to_string(A v) {
   res += "}";
   return res;
 }
+}  // namespace std
 void debug_out() { std::cerr << std::endl; }
 template <typename Head, typename... Tail>
 void debug_out(Head H, Tail... T) {

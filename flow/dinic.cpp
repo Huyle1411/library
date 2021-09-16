@@ -41,7 +41,7 @@ class dinic {
       int id = g.g[v][j];
       const auto &e = g.edges[id];
       if (e.c - e.f > g.eps && d[e.to] == d[v] - 1) {
-        T t = dfs(e.to, min(e.c - e.f, w));
+        T t = dfs(e.to, std::min(e.c - e.f, w));
         if (t > g.eps) {
           g.edges[id].f += t;
           g.edges[id ^ 1].f -= t;

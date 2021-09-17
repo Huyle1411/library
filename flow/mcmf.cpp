@@ -1,6 +1,5 @@
-template <typename T, typename C>
-class mcmf {
- public:
+template <typename T, typename C> class mcmf {
+public:
   static constexpr T eps = (T)1e-9;
   struct edge {
     int from;
@@ -9,7 +8,7 @@ class mcmf {
     T f;
     C cost;
   };
-  std::vector<std::vector<int> > g;
+  std::vector<std::vector<int>> g;
   std::vector<edge> edges;
   std::vector<C> d;
   std::vector<int> q;
@@ -35,12 +34,12 @@ class mcmf {
     flow = 0;
   }
 
-  void add(int from, int to, T forward_cap, T backward_cap, C cost) {
+  void add(int from, int to, T forward_cap, T backward_cap, C _cost) {
     assert(0 <= from && from < n && 0 <= to && to < n);
     g[from].push_back((int)edges.size());
-    edges.push_back({from, to, forward_cap, 0, cost});
+    edges.push_back({from, to, forward_cap, 0, _cost});
     g[to].push_back((int)edges.size());
-    edges.push_back({to, from, backward_cap, 0, -cost});
+    edges.push_back({to, from, backward_cap, 0, -_cost});
   }
   bool expath() {
     fill(d.begin(), d.end(), std::numeric_limits<C>::max());
@@ -73,7 +72,7 @@ class mcmf {
       int v = fin;
       while (v != st) {
         const edge &e = edges[pe[v]];
-        push = min(push, e.c - e.f);
+        push = std::min(push, e.c - e.f);
         v = e.from;
       }
       v = fin;
@@ -93,6 +92,6 @@ class mcmf {
   std::pair<T, C> max_flow_min_cost() {
     while (expath()) {
     }
-    return make_pair(flow, cost);
+    return std::make_pair(flow, cost);
   }
 };

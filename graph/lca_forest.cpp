@@ -4,8 +4,8 @@ public:
   using dfs_forest<T>::g;
   using dfs_forest<T>::n;
   using dfs_forest<T>::pv;
-  using dfs_forest<T>::pos;
-  using dfs_forest<T>::end;
+  using dfs_forest<T>::tin;
+  using dfs_forest<T>::tout;
   using dfs_forest<T>::depth;
 
   int h;
@@ -36,7 +36,7 @@ public:
   }
 
   inline bool anc(int x, int y) {
-    return (pos[x] <= pos[y] && end[y] <= end[x]);
+    return (tin[x] <= tin[y] && tout[y] <= tout[x]);
   }
 
   inline int go_up(int x, int up) {

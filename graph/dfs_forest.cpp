@@ -7,8 +7,8 @@ public:
   std::vector<int> pv;
   std::vector<int> pe;
   std::vector<int> order;
-  std::vector<int> pos;
-  std::vector<int> end;
+  std::vector<int> tin;
+  std::vector<int> tout;
   std::vector<int> sz;
   std::vector<int> root;
   std::vector<int> depth;
@@ -20,8 +20,8 @@ public:
     pv = std::vector<int>(n, -1);
     pe = std::vector<int>(n, -1);
     order.clear();
-    pos = std::vector<int>(n, -1);
-    end = std::vector<int>(n, -1);
+    tin = std::vector<int>(n, -1);
+    tout = std::vector<int>(n, -1);
     sz = std::vector<int>(n, 0);
     root = std::vector<int>(n, -1);
     depth = std::vector<int>(n, -1);
@@ -32,8 +32,8 @@ public:
     pv.clear();
     pe.clear();
     order.clear();
-    pos.clear();
-    end.clear();
+    tin.clear();
+    tout.clear();
     sz.clear();
     root.clear();
     depth.clear();
@@ -42,7 +42,7 @@ public:
 
 private:
   void do_dfs(int v) {
-    pos[v] = (int)order.size();
+    tin[v] = (int)order.size();
     order.push_back(v);
     sz[v] = 1;
     for (int id : g[v]) {
@@ -59,7 +59,7 @@ private:
       do_dfs(to);
       sz[v] += sz[to];
     }
-    end[v] = (int)order.size() - 1;
+    tout[v] = (int)order.size() - 1;
   }
 
   void do_dfs_from(int v) {

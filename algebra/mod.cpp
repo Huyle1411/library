@@ -1,12 +1,5 @@
-constexpr int P = 1e9 + 7;
-// assume -P <= x < 2P
-int normalize(int x) {
-  if (x < 0) { x += P; }
-  if (x >= P) { x -= P; }
-  return x;
-}
 template <class T>
-T binpow(T a, int b) {
+T binpow(T a, int64_t b) {
   T res = 1;
   for (; b; b /= 2, a *= a) {
     if (b % 2) {
@@ -15,8 +8,25 @@ T binpow(T a, int b) {
   }
   return res;
 }
+
+template <int _MOD>
 struct modnum {
+  static constexpr int P = _MOD;
+
+ private:
   int x;
+
+ public:
+  // assume -P <= x < 2P
+  int normalize(int _x) {
+    if (_x < 0) {
+      _x += P;
+    }
+    if (_x >= P) {
+      _x -= P;
+    }
+    return _x;
+  }
   modnum(int _x = 0) : x(normalize(_x)) {
   }
   int val() const { return x; }
@@ -26,7 +36,7 @@ struct modnum {
     return binpow(*this, P - 2);
   }
   modnum& operator*=(const modnum& rhs) {
-    x = (int)(i64(x) * rhs.x % P);  // avoid warning, assume P has type int
+    x = (int)(int64_t(x) * rhs.x % P);  // avoid warning, assume P has type int
     return *this;
   }
   modnum& operator+=(const modnum& rhs) {

@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
 int main() {
-  cin.tie(0)->sync_with_stdio(0); 
-  cin.exceptions(cin.failbit);
+  std::cin.tie(0)->sync_with_stdio(0); 
+  std::cin.exceptions(cin.failbit);
 }

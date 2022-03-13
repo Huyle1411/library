@@ -10,7 +10,7 @@ struct sparse_table {
     }
     for (int i = 0; i < LOG - 1; i++) {
       for (int j = 0; j < N - (1 << i); j++) {
-        ST[i + 1][j] = min(ST[i][j], ST[i][j + (1 << i)]);
+        ST[i + 1][j] = std::min(ST[i][j], ST[i][j + (1 << i)]);
       }
     }
   }
@@ -20,6 +20,6 @@ struct sparse_table {
       return INF;
     }
     int d = 31 - __builtin_clz(R - L);
-    return min(ST[d][L], ST[d][R - (1 << d)]);
+    return std::min(ST[d][L], ST[d][R - (1 << d)]);
   }
 };

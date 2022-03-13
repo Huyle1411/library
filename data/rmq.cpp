@@ -2,7 +2,7 @@ template <typename T>
 struct sparse_table {
   std::vector<std::vector<T>> ST;
   sparse_table(std::vector<T>& A) {
-    int N = A.size();
+    int N = (int)A.size();
     int LOG = 32 - __builtin_clz(N);
     ST = std::vector<std::vector<int>>(LOG, std::vector<int>(N));
     for (int i = 0; i < N; i++) {

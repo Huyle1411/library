@@ -44,12 +44,13 @@ public:
     return up[u][0];
   }
 
+  // need to run preprocess before use
   void preprocess(int root) {
     tin.resize(n);
     tout.resize(n);
     // start with 0-index
     timer = -1;
-    l = (int)ceil(log2(n));
+    l = (int)std::ceil(std::log2(n));
     up.assign(n, std::vector<int>(l + 1));
     dfs(root, root);
   }

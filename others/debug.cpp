@@ -50,15 +50,15 @@ std::string to_string(std::tuple<A, B, C> p) { return "(" + to_string(std::get<0
 template <typename A, typename B, typename C, typename D>
 std::string to_string(std::tuple<A, B, C, D> p) { return "(" + to_string(std::get<0>(p)) + ", " + to_string(std::get<1>(p)) + ", " + to_string(std::get<2>(p)) + ", " + to_string(std::get<3>(p)) + ")"; }
 }  // namespace std
-void debug_out() { std::cerr << std::endl; }
+void debug_out() { std::cerr << "\033[39m" << std::endl; }
 template <typename Head, typename... Tail>
 void debug_out(Head H, Tail... T) {
   std::cerr << " " << std::to_string(H);
   debug_out(T...);
 }
-#ifdef _DEBUG
-#define debug(...) std::cerr << "LINE(" << __LINE__ << ") [" << __FUNCTION__ << "] -> " \
-                             << "[" << #__VA_ARGS__ << "]:",                            \
+#ifdef DEBUG
+#define debug(...) std::cerr << "\033[91mLINE(" << __LINE__ << ") [" << __FUNCTION__ << "] -> " \
+                             << "[" << #__VA_ARGS__ << "]:",                                    \
                    debug_out(__VA_ARGS__)
 #else
 #define debug(...) 95

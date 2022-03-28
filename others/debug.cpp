@@ -1,3 +1,5 @@
+// === Debug macro starts here ===
+
 namespace std {
 template <typename A, typename B>
 std::string to_string(std::pair<A, B> p);
@@ -63,3 +65,5 @@ void debug_out(Head H, Tail... T) {
 #else
 #define debug(...) 95
 #endif
+
+// === Debug macro ends here ===

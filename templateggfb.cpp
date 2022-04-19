@@ -1,10 +1,19 @@
 #include <bits/stdc++.h>
+
+#define runcase ^-^
+
+void solve(int test_case = 0) {
+  std::cout << "Case #" << tc + 1 << ": ";
+}
+
 int main() {
   std::cin.tie(0)->sync_with_stdio(0); 
   std::cin.exceptions(std::cin.failbit);
-  int T;
+  int T = 1;
+#ifdef runcase
   std::cin >> T;
-  for (int tc = 1; tc <= T; ++tc) {
-    std::cout << "Case #" << tc << ": ";
+#endif
+  for (int tc = 0; tc < T; ++tc) {
+    solve(tc);
   }
 }

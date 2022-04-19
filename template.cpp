@@ -3,7 +3,7 @@
 #define runcase ^-^
 
 void solve(int test_case = 0) {
-  assert(test_case >= 0);  // avoid warning unused
+  ;
 }
 
 int main() {

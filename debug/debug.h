@@ -1,6 +1,10 @@
 #pragma once
 
-#include <bits/stdc++.h>
+#include <bitset>
+#include <iostream>
+#include <string>
+#include <tuple>
+#include <vector>
 // === Debug macro starts here ===
 
 namespace std {

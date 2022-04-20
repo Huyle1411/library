@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 #ifdef DEBUG
-#include "debug/debug.h"
+#include "debug.h"
 #else
 #define debug(...) 69
 #endif

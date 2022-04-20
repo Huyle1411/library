@@ -1,3 +1,6 @@
+#pragma once
+
+#include <bits/stdc++.h>
 // === Debug macro starts here ===
 
 namespace std {
@@ -7,10 +10,10 @@ template <typename A, typename B, typename C>
 std::string to_string(std::tuple<A, B, C> p);
 template <typename A, typename B, typename C, typename D>
 std::string to_string(std::tuple<A, B, C, D> p);
-std::string to_string(const std::string &s) { return '"' + s + '"'; }
-std::string to_string(const char *s) { return to_string((std::string)s); }
-std::string to_string(bool b) { return (b ? "true" : "false"); }
-std::string to_string(std::vector<bool> v) {
+inline std::string to_string(const std::string &s) { return '"' + s + '"'; }
+inline std::string to_string(const char *s) { return to_string((std::string)s); }
+inline std::string to_string(bool b) { return (b ? "true" : "false"); }
+inline std::string to_string(std::vector<bool> v) {
   bool first = true;
   std::string res = "{";
   for (int i = 0; i < static_cast<int>(v.size()); i++) {
@@ -52,7 +55,7 @@ std::string to_string(std::tuple<A, B, C> p) { return "(" + to_string(std::get<0
 template <typename A, typename B, typename C, typename D>
 std::string to_string(std::tuple<A, B, C, D> p) { return "(" + to_string(std::get<0>(p)) + ", " + to_string(std::get<1>(p)) + ", " + to_string(std::get<2>(p)) + ", " + to_string(std::get<3>(p)) + ")"; }
 }  // namespace std
-void debug_out() { std::cerr << "\033[39m" << std::endl; }
+inline void debug_out() { std::cerr << "\033[39m" << std::endl; }
 template <typename Head, typename... Tail>
 void debug_out(Head H, Tail... T) {
   std::cerr << " " << std::to_string(H);

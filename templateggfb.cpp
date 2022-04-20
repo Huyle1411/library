@@ -1,5 +1,11 @@
 #include <bits/stdc++.h>
 
+#ifdef DEBUG
+#include "debug/debug.h"
+#else
+#define debug(...) 69
+#endif
+
 #define runcase ^-^
 
 void solve(int test_case = 0) {

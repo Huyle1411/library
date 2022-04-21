@@ -12,7 +12,7 @@ void solve(int test_case = 0) {
   debug(test_case);
 }
 
-int main() {
+int32_t main() {
   std::cin.tie(0)->sync_with_stdio(0);
   std::cin.exceptions(std::cin.failbit);
   int T = 1;

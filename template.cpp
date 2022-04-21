@@ -9,7 +9,6 @@
 #define runcase ^-^
 
 void solve(int test_case = 0) {
-  debug(test_case);
 }
 
 int32_t main() {

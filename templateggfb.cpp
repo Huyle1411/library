@@ -12,7 +12,7 @@ double getCurrentTime() {
 }
 
 void solve(int test_case = 0) {
-  std::cout << "Case #" << tc + 1 << ": ";
+  std::cout << "Case #" << test_case + 1 << ": ";
 }
 
 int32_t main() {

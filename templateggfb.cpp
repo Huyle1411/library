@@ -5,6 +5,7 @@
 #define debug(...) 69
 #endif
 #define runcase ^-^
+using i64 = long long;
 
 void solve(int test_case = 0) {
   std::cout << "Case #" << test_case + 1 << ": ";

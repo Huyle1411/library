@@ -7,7 +7,7 @@
 #define runcase ^-^
 using i64 = long long;
 
-void solve(int test_case = 0) {
+void solve() {
 }
 
 int32_t main() {
@@ -18,6 +18,6 @@ int32_t main() {
   std::cin >> T;
 #endif
   for (int tc = 0; tc < T; ++tc) {
-    solve(tc);
+    solve();
   }
 }

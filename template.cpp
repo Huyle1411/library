@@ -7,10 +7,8 @@ using i64 = long long;
 #endif
 
 int32_t main() {
-  std::cin.tie(0)->sync_with_stdio(0);
-  std::cin.exceptions(std::cin.failbit);
   int tt = 1;
-  std::cin >> tt;
+  scanf("%d", &tt);
   while (tt--) {
   }
 }

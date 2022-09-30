@@ -6,7 +6,7 @@ class fenwick {
   fenwick(int _n) : n(_n) {
     fenw.resize(n);
   }
-  void modify(int x, T v) {
+  void add(int x, T v) {
     while (x < n) {
       fenw[x] += v;
       x |= (x + 1);

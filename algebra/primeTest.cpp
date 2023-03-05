@@ -2,46 +2,46 @@ using u64 = uint64_t;
 using u128 = __uint128_t;
 
 u64 binpower(u64 base, u64 exp, u64 mod) {
-  u64 result = 1;
-  base %= mod;
-  while (exp) {
-    if (exp & 1)
-      result = u64((u128)result * base % mod);
-    base = u64((u128)base * base % mod);
-    exp >>= 1;
-  }
-  return result;
+    u64 result = 1;
+    base %= mod;
+    while (exp) {
+        if (exp & 1)
+            result = u64((u128)result * base % mod);
+        base = u64((u128)base * base % mod);
+        exp >>= 1;
+    }
+    return result;
 }
 
 bool isComposite(u64 n, u64 a, u64 d, int s) {
-  u64 x = binpower(a, d, n);
-  if (x == 1 || x == n - 1)
-    return false;
-  for (int r = 1; r < s; r++) {
-    x = u64((u128)x * x % n);
-    if (x == n - 1)
-      return false;
-  }
-  return true;
+    u64 x = binpower(a, d, n);
+    if (x == 1 || x == n - 1)
+        return false;
+    for (int r = 1; r < s; r++) {
+        x = u64((u128)x * x % n);
+        if (x == n - 1)
+            return false;
+    }
+    return true;
 }
 
 // https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test  Testing against small sets of bases
 bool MillerRabin(u64 n) {
-  if (n < 2)
-    return false;
+    if (n < 2)
+        return false;
 
-  int r = 0;
-  u64 d = n - 1;
-  while ((d & 1) == 0) {
-    d >>= 1;
-    r++;
-  }
+    int r = 0;
+    u64 d = n - 1;
+    while ((d & 1) == 0) {
+        d >>= 1;
+        r++;
+    }
 
-  for (u64 a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {
-    if (n == a)
-      return true;
-    if (isComposite(n, a, d, r))
-      return false;
-  }
-  return true;
+    for (u64 a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {
+        if (n == a)
+            return true;
+        if (isComposite(n, a, d, r))
+            return false;
+    }
+    return true;
 }

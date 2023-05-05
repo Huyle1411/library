@@ -9,7 +9,7 @@ class segment_tree {
             val = _val;
             ...
         }
-        void compute(int l, int r, ...) {
+        void compute(int l, int r, ... ) {
 
         }
     };
@@ -32,8 +32,8 @@ class segment_tree {
     void push(int v, int tl, int tr) {
         int tm = (tl + tr) >> 1;
         int x = v + 1, y = v + ((tm - tl + 1) << 1);
-        ...
         // init lazy variable after push
+        ...
     }
     void build(int v, int tl, int tr) {
         if (tl == tr) return;

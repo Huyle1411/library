@@ -9,7 +9,8 @@ class segtree {
     };
     node combine(const node& a, const node& b) const {
         node res;
-        ... return res;
+        ...
+        return res;
     }
     inline void push(int x, int l, int r) {
         int y = (l + r) >> 1;

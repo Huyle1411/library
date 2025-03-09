@@ -1,10 +1,11 @@
+// const int INF = 1e9
 template <typename T>
 struct sparse_table {
     std::vector<std::vector<T>> ST;
     sparse_table(std::vector<T>& A) {
         int N = (int)A.size();
         int LOG = 32 - __builtin_clz(N);
-        ST = std::vector<std::vector<int>>(LOG, std::vector<int>(N));
+        ST = std::vector<std::vector<T>>(LOG, std::vector<T>(N));
         for (int i = 0; i < N; i++) {
             ST[0][i] = A[i];
         }
